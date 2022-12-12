@@ -1,0 +1,16 @@
+.columns {
+    display: flex;
+  }
+
+  .equal-columns > * {
+    flex: 1;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: var(--ff-body);
+    font-weight: var(--fw-body);
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }

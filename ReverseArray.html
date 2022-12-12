@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Insertinh array using Js.
+    </title>
+    <link rel="stylesheet" href="ReverseArray.css">
+</head>
+
+<body style="text-align: center;">
+
+    <h1 style="color: red;">
+        Sorting of Arrays
+    </h1>
+    <div class="container">
+        <div class="columns equal-columns">
+          <div class="col">
+            <h3>Accepting the input elements</h3>
+            <form class="container" action="index.html" method="post">
+                <input type="text" name="array[]" value="" /><br>
+                <input type="text" name="array[]" value="" /><br>
+                <input type="text" name="array[]" value="" /><br>
+                <input type="text" name="array[]" value="" /><br>
+                <input type="text" name="array[]" value="" /><br>
+                <button type="button" name="button" onclick="GetInp()">
+                    Submit
+                </button>
+                <p id="par"></p>
+            </form>
+            <br>
+          </div>
+
+          <div class="col">
+
+            <h3>Reversed array Elements are </h3>
+           <button type="button" name="button2"onclick="ReverseArr()">
+                Reverse
+            </button>
+            <p id="par2"></p>
+          </div>
+
+          <div class="col">
+            <h3>Sorted Array of Elements</h3>
+            <p>Sorted array</p>
+          </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var k = "Input Array :";
+        function GetInp() {
+            let input = document.getElementsByName('array[]');
+
+            for (let i = 0; i < input.length; i++) {
+                let a = input[i];
+                k = k + a.value + " ";
+            }
+
+            document.getElementById("par").innerHTML = k;
+            document.getElementById("po").innerHTML = "Output";
+
+        }
+        var k1 = "Reversed Output Array :";
+        function ReverseArr() {
+            let input = document.getElementsByName('array[]');
+
+            for (let i = input.length-1; i >= 0; i--) {
+                let a = input[i];
+                k1= k1 + a.value + " \n";
+           }
+
+            document.getElementById("par2").innerHTML = k1   ;
+            document.getElementById("po").innerHTML = "Output";
+        }
+
+        var k2 = "Sorted outpur array :";
+        function sortedarr()
+    </script>
+</body>
+
+</html>
