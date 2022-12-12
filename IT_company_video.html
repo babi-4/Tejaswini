@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    
+<style>
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+  }
+
+  .content {
+    position: static;
+     
+    background: rgba(0, 0, 0, 0.5);
+    color: #062a6d;
+    width: 100%;
+    padding: 20px;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px rgb(8, 128, 157);
+    overflow-y: scroll;
+    
+  }
+  #id{
+    overflow-y:scroll;
+  }
+
+  
+
+
+  input[type=text],  input[type=email] {
+    width: 40%;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  h2{
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-shadow: 10px black;
+  }
+
+  input[type="submit"]{
+    background-color: rgb(13, 20, 158);
+    color: aliceblue;
+    padding: 5px;
+    font-size: 100%;
+    width: 90%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+
+}
+
+input [type="submit"]:hover{
+
+  background-color: #4caf84;
+}
+
+</style>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo" poster="../html/ItCompany_gif.webm">
+        <source src="video.mp4" type="video/mp4">
+        
+      </video>
+      
+      <div class="content">
+        <h1> &lt;Work Nation&gt;</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Company Reviews</a>
+    <a href="#">Jobs</a>
+    <a href="#">Investors</a>
+    <a href="#">Careers</a>
+</nav>
+        
+        <h2 > Career Form</h2>
+        <form action="" id="form">
+          
+          
+          <label for="First_Name"><b>First name </b></label><br />
+          <input name="First_Name" type="text" maxlength="50" />
+          <br>
+          <label for="Last_Name"><b>Last name </b></label><br />
+          <input name="Last_Name" type="text" maxlength="50"  />
+          <br>
+          <label for="Email_Address"><b>Email </b></label><br />
+          <input name="Email_Address" id="mail" type="email" maxlength="100" />
+          <span id="email_id" class="mail"></span><br></br>
+          <br>
+          <label for="Portfolio"><b>Portfolio website</b></label><br />
+          <input name="Portfolio" type="text" maxlength="255" value="http://"  />
+          <br>
+          <label for="Position"><b>Position you are applying for </b></label><br />
+          <input name="Position" type="text" maxlength="100"  />
+          <br>
+          <label for="Salary"><b>Salary requirements</b></label><br /> <input name="Salary" type="text" maxlength="50" /> 
+          <br>
+          
+          <label for="Phone"><b>Phone </b></label><br />
+          <input name="Phone" id="Mobile" type="text" />
+          <span id="messages" class="mobile"></span><br></br>
+          <br>
+          
+          
+          
+          <label for="Organization"><b>Last company you worked for</b></label><br />
+          <input name="Organization" type="text" maxlength="100"/>
+          <br>
+          
+          
+          
+          
+          <button type="submit">Submit</button>
+          
+          </form>
+         
+      </div>
+      <script>
+        function myfun(){
+            var mobile= document.getElementById("Mobile").value;
+            var email= document.getElementById("mail").value;
+
+            if(mobile==""){
+                document.getElementById("messages").innerHTML="**Please fill mobile number!";
+                return false;
+            }  
+           if(mobile.length!=10){
+               document.getElementById("messages").innerHTML="**Please enter 10 digits!";
+                return false;
+           }
+
+           if(email.indexOf('@')<=0){
+               document.getElementById("email_id").innerHTML="**Please enter some characters before '@'!";
+                return false;
+           }
+
+           if(email.charAt(email.length-4)!='.') 
+           {
+               document.getElementById("email_id").innerHTML="**Invalid position of '.'!";
+                return false;
+           }
+           } 
+    </script>
+    
+    
+      
+      
+     
+
+    
+</body>
+</html>
