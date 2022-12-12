@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+h1{
+    text-align: center;
+    background-color: papayawhip;
+    text-shadow: 1px 1px 1px rgb(8, 6, 7);
+    text-decoration: black solid underline;
+    padding: 7px;
+}
+
+*{
+    background-color: skyblue;
+}
+body{
+    padding: 20px;
+    border: 10px solid black;
+    margin: 20px;
+    text-indent: 1cm;
+    font-size: 17px;
+  
+}
+img{
+    position: absolute ;
+    z-index: 3;
+    top: 74px;
+
+}
+
+p, legend{
+    font-family:cursive ;
+}
+
+
+p.comment{
+    font-style: italic;
+}
+
+.submit{
+    font-weight: bolder;
+}
+
+hr{
+    border: 2px dashed skyblue;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select,
+textarea,
+fieldset{
+    width: 50%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    
+}
+
+input[type="submit"]{
+    background-color: grey;
+    color: aliceblue;
+    padding: 5px;
+    font-size: 100%;
+    width: 90%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+
+}
+
+input [type="submit"]:hover{
+
+    background-color: #4caf84;
+}
+
+
+
+.mobile, .email{
+    color: red;
+    font-style: bold;
+}
+    </style>
+    
+    
+</head>
+
+<body>
+    <form action="#" onsubmit="return myfun()">
+        <h1>Student Registration Form</h1>
+        <img src="insta.jpg" height="50" width="50">
+        <p class="comment">* indicates compulsory information to be filled<p>
+        <h2>Your Information</h2>
+        <p> *Name <input type="text" name="Name" class="form-control" id="user" required></p>
+        <fieldset>
+            <legend>
+                Gender
+            </legend>
+            <p>
+                Male<input type="radio" name="Gender" id="1">
+                Female<input type="radio" name="Gender" id="2">
+            </p>
+        </fieldset>
+        <p>
+            *Date of Birth: <input type="date" name="Birth" id="Birth" required>
+        </p>
+        <p>
+            Address: <textarea name="address" id="address" cols="120" rows="6"></textarea>
+        </p>
+        <p>
+            *Mobile Number: <input type="number" name="Mobile" class
+            ="form-control" id="Mobile" value="" required>
+            <span id="messages" class="mobile"></span><br></br>
+            
+        </p>
+        <p>
+            *Email: <input type="text" name="mail" class="form-control" id="mail" required>
+            <span id="email_id" class="email"></span><br></br>
+        </p>
+        <hr>
+       
+       
+            <h2>SSC Details</h2> 
+    
+        <p>
+            University: <textarea name="university" id="university" cols="30" rows="4"></textarea>
+        </p>
+        <p>
+            Year: <select name="year" id="year">
+                <option value="Select year">Select year</option>
+                <option value="2016-17">2016-17</option>
+                <option value="2017-18">2017-18</option>
+                <option value="2018-19">2018-19</option>
+                <option value="2019-20">2019-20</option>
+            </select>
+        </p>
+        <p>
+            *Percentage: <input type="number" name="marks" id="marks" required>
+        </p>
+        <hr >
+        <h2>HSC Details</h2> 
+    
+        <p>
+            University: <textarea name="university" id="university" cols="30" rows="4"></textarea>
+        </p>
+        <p>
+            Year: <select name="year" id="year">
+                <option value="Select year">Select year</option>
+                <option value="2018-19">2018-19</option>
+                <option value="2019-20">2019-20</option>
+                <option value="2020-21">2020-21</option>
+                <option value="2021-22">2021-22</option>
+            </select>
+        </p>
+        <p>
+            *Percentage: <input type="number" name="marks" id="marks" required>
+        </p>
+        <hr>
+        <h2>Family Details</h2>
+        <p>
+            Father's Occupation: <select name="occupation" id="occupation">
+            <option value="">Select occupation</option>
+            <option value="Farmer">Farmer</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Lawyer">Lawyer</option>
+            <option value="Worker">Worker</option>
+            <option value="Business">Business</option>
+            <option value="Unemployed">Unemployed</option>
+        </select>
+        </p>
+        <p>
+            Mobile number: <input type="number" name="Fmobile" id="Fmobile">
+        </p>
+        <p>
+            Mother's Occupation: <select name="occupation" id="occupation">
+            <option value="">Select occupation</option>
+            <option value="Farmer">Farmer</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Lawyer">Lawyer</option>
+            <option value="Worker">Worker</option>
+            <option value="Business">Business</option>
+            <option value="Unemployed">Unemployed</option>
+        </select>
+        </p>
+        <p>
+            Mobile number: <input type="number" name="Fmobile" id="Fmobile">
+        </p>
+        
+        <p class="submit">
+        <input type="submit" value="Submit" style="margin: 5px;" >
+        </p>
+
+
+    </form>
+
+    <script>
+         function myfun(){
+             var mobile= document.getElementById("Mobile").value;
+             var email= document.getElementById("mail").value;
+
+             if(mobile==""){
+                 document.getElementById("messages").innerHTML="**Please fill mobile number!";
+                 return false;
+             }  
+            if(mobile.length!=10){
+                document.getElementById("messages").innerHTML="**Please enter 10 digits!";
+                 return false;
+            }
+
+            if(email.indexOf('@')<=0){
+                document.getElementById("email_id").innerHTML="**Please enter some characters before '@'!";
+                 return false;
+            }
+
+            if(email.charAt(email.length-4)!='.') 
+            {
+                document.getElementById("email_id").innerHTML="**Invalid position of '.'!";
+                 return false;
+            }
+            } 
+     </script>
+    
+</body>
+</html>
