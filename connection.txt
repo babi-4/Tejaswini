@@ -1,0 +1,27 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "studentsvit";
+
+// Create connection
+$connect = new mysqli($servername, $username, $password,$dbname);
+
+// Check connection
+if ($connect->connect_error) 
+{
+  echo "Connection failed: ";
+}
+else
+echo "Connected successfully";
+
+?>
+
+<?php
+include('dbconn.php');
+
+$sql = "INSERT INTO perdata  VALUES('534365','Amey','01/07/2001','Pune', '965476789')";
+
+mysqli_query($connect,$sql);	
+
+?>
